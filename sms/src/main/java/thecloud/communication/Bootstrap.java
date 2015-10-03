@@ -13,7 +13,7 @@ public class Bootstrap {
         port(getHerokuAssignedPort());
         
         //test 1
-        get("/twillio", (req, res)->(HTTPify("This time Hello World gotta works. (req was: "+req.body())));
+        get("/twillio", (req, res)->(HTTPify("This time Hello World gotta works. (req was: "+req.body()+")")));
         
         //test 2
         get("/twillio/something/else",
@@ -25,7 +25,7 @@ public class Bootstrap {
         //test3
         get("/twillio/something/else/:id", 
                 (req, res) -> {
-                    return HTTPify("you gave me" + req.params("id"));
+                    return HTTPify("param entered: '"+req.params("id")+"'");
                 }
         );
         
