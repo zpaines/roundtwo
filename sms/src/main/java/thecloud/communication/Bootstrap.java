@@ -5,11 +5,12 @@
 
 package thecloud.communication;
 
+import static spark.Spark.*;
+
 public class Bootstrap {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
+        get("/twillio", (req, res)->("<Response><Message>Hello World!</Message></Response"));
     }
 
 }
