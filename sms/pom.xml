@@ -56,7 +56,7 @@
                 </descriptorRefs>
                 <archive>
                     <manifest>
-                        <mainClass>Main</mainClass>
+                        <mainClass>Bootstrap</mainClass>
                     </manifest>
                 </archive>
             </configuration>
