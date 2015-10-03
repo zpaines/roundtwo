@@ -56,7 +56,7 @@
                 </descriptorRefs>
                 <archive>
                     <manifest>
-                        <mainClass>Main</mainClass>
+                        <mainClass>thecloud.communication.Main</mainClass>
                     </manifest>
                 </archive>
             </configuration>
@@ -72,7 +72,7 @@
         <processTypes>
             <!-- Tell Heroku how to launch your application -->
             <!-- You might have to remove the ./ in front   -->
-            <web>java -jar target/glacial-anchorage-3303-1.0-jar-with-dependencies.jar</web>
+            <web>java -jar ./target/sms/0.0.1-SNAPSHOT/sms-0.0.1-SNAPSHOT.jar</web>
         </processTypes>
     </configuration>
 </plugin>
