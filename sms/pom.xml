@@ -56,7 +56,7 @@
                 </descriptorRefs>
                 <archive>
                     <manifest>
-                        <mainClass>Bootstrap</mainClass>
+                        <mainClass>/thecloud.communication/Bootstrap</mainClass>
                     </manifest>
                 </archive>
             </configuration>
