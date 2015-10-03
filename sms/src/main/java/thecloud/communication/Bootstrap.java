@@ -11,7 +11,35 @@ public class Bootstrap {
 
     public static void main(String[] args) {
         port(getHerokuAssignedPort());
-        get("/twillio", (req, res)->("<Response><Message>This time Hello World gotta works. (req was: "+req.body()+")</Message></Response"));
+        
+        //test 1
+        get("/twillio", (req, res)->(HTTPify("This time Hello World gotta works. (req was: "+req.body())));
+        
+        //test 2
+        get("/twillio/something/else",
+                (req, res) -> {
+                    return HTTPify((System.currentTimeMillis() % 2 == 0)? "yes" : "no"); 
+                }
+        );
+        
+        //test3
+        get("/twillio/something/else/:id", 
+                (req, res) -> {
+                    return HTTPify("you gave me" + req.params("id"));
+                }
+        );
+        
+        get("/thecloud/smsin", 
+                (req, res) -> {
+                    System.out.println("the request is: "+req.body());
+                    return HTTPify("");
+                }
+                );
+        
+    }
+
+    public static String HTTPify(String text){
+        return "<Response><Message>"+text+"</Message></Response>";
     }
     
     //code found at https://sparktutorials.github.io/2015/08/24/spark-heroku.html
